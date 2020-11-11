@@ -1,0 +1,49 @@
+.navglobe-pright{
+	padding-right: 290px;
+}
+.nav-location{
+	padding-left: 200px;
+}
+.nav-button{
+	height: 50px;
+	border-radius: 25px;
+}
+/* .nav-button .btn-outline-dark {
+  background-color: yellow !important;
+} */
+
+.explore{
+	padding-top:200px;
+}
+.explore h1{
+   font-size: 90px;
+   line-height: 105px;
+   color: #000000;
+}
+.serchbar{
+	padding-top:180px;
+}
+.serchbar input{
+	height: 80px;
+	border-radius: 25px;
+}
+.serchbar button{
+	height: 80px;
+	border-radius: 25px;
+}
+.site-index {
+ background-image: url("images/bg.svg");
+   -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.listing-list{
+	margin-top: 80px;
+}
+.listing-list-sb{
+	margin-top: 50px;
+}
+
+
