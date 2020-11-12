@@ -13,32 +13,99 @@ $markers = Location::find()->innerJoinWith('listing')->asArray()->all();
 
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBmnULnIcTW4J_9NxGeHhLSVLme6Ba36AE&callback=initMap&libraries=&v=weekly" defer></script>
 
+<div class="row" style="margin-top: 80px">
+    <div class="col-md-8">
+    <div class="row">
+    <div class="col-md-6">
+             <!-- Search form -->
+         <div class="input-group">
+            <input type="text" class="form-control" placeholder="Search Property" >
+            <div class="input-group-append">
+              <button class="btn btn-secondary" type="button">
+                <i class="fa fa-search"></i>
+              </button>
+            </div>
+        </div>
 
-<div class="row">
-    <div class="col-sm-8  col-md-8 col-lg-8">
+    </div>
+    <div class="col-md-6">
+        <div class="row">
+            <div class="col-md-2">
+                <button type="button" class="btn btn-outline-dark">Price</button>
+            </div>
+            <div class="col-md-3">
+                <button type="button" class="btn btn-outline-dark">Property Type</button>
+            </div>
+            <div class="col-md-2">
+               <button type="button" class="btn btn-outline-dark">More</button>
+            </div>  
+            <div class="col-md-3">
+               <button type="button" class="btn btn-primary">Save Search</button>
+            </div>
+            <div class="col-md-2">
+
+            </div>
+            </div>
             
+
+        </div>
+        </div>
+    </div>
+        <div class="col-md-4">
+        <div class="row">
+            <div class="col-md-4">
+                
+            </div>
+            <div class="col-md-4">
+                <button type="button" class="btn btn-primary pull-right">Get Loan</button>
+            </div>
+            <div class="col-md-4">
+               <button type="button" class="btn btn-primary pull-right">List Property</button>
+                
+            </div>
+            
+        </div>
+        </div>
+    </div>
+  
+
+
+        
+          
+         
+
+<div class="row" style="margin-top: 20px">
+
+    <div class="col-sm-8  col-md-8 col-lg-8">
+       
         
         <div id="homemap" style="width: 100%; height: 850px; border-radius: 5px"></div>
 
     </div>
 
-    <div class="col-sm-4 col-md-4 col-lg-4 d-flex flex-wrap" style="margin-top: 80px">
-    <div class="container">
-        <div class="dropdown">
-            <label for="male">Sort By</label>
-          <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
-            Homes for you
-          </button>
-          <div class="dropdown-menu">
-            <a class="dropdown-item" href="#">Price (High to Low)</a>
-            <a class="dropdown-item" href="#">Price (Low to High)</a>
-            <a class="dropdown-item" href="#">Newest</a>
-            <a class="dropdown-item" href="#">Bedrooms</a>
-            <a class="dropdown-item" href="#">Bathrooms</a>
-            <a class="dropdown-item" href="#">Square feet</a>
-          </div>
+    <div class="col-sm-4 col-md-4 col-lg-4 d-flex flex-wrap">
+     <div class="container">
+    <div class="row">
+        <div class="col-md-7">
+            <h3>Ruiru Plots For Sale</h3>
+            <h6>4,248 results</h6>
         </div>
-
+        <div class="col-md-5">
+            <div class="row">
+            <h5> Sort By: </h5> 
+                    <button type="button" class="btn btn-outline-dark pull-up dropdown-toggle" data-toggle="dropdown">Newest</button>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="#">Price (High to Low)</a>
+                        <a class="dropdown-item" href="#">Price (Low to High)</a>
+                        <a class="dropdown-item" href="#">Homes for you</a>
+                        <a class="dropdown-item" href="#">Bedrooms</a>
+                        <a class="dropdown-item" href="#">Bathrooms</a>
+                        <a class="dropdown-item" href="#">Square feet</a>
+                    </div>      
+            </div>
+        </div> 
+    </div>
+   
     <div class="card-deck">
     <div class="card text-center">
         <img class="card-img-top" src="<?= Yii::$app->request->baseUrl;?>/images/hse2.jpeg" alt="Card image cap">
