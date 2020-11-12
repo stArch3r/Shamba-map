@@ -168,14 +168,10 @@ $markers = Location::find()->innerJoinWith('listing')->asArray()->all();
             </div>
         </div>
     </div>
+</div>        
+</div> 
 </div>
-        
-    </div>
-    
 
-    
-    
-</div>
 
 <script type="text/javascript">
       // Initialize and add the map
