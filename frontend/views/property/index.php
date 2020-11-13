@@ -60,8 +60,9 @@ $markers = Location::find()->innerJoinWith('listing')->asArray()->all();
                 <button type="button" class="btn btn-primary pull-right">Get Loan</button>
             </div>
             <div class="col-md-4">
-               <button type="button" class="btn btn-primary pull-right">List Property</button>
-                
+               <button type="button" class="btn btn-primary pull-right">
+                 <?= Html::a('List Property',  ['listing/create'], ['class' => 'btn btn-sub btn-primary']) ?>
+                 </button>
             </div>
             
         </div>
@@ -170,6 +171,15 @@ $markers = Location::find()->innerJoinWith('listing')->asArray()->all();
     </div>
 </div>        
 </div> 
+</div>
+
+<div class="btn-group-fab" role="group" aria-label="FAB Menu">
+  <div>
+    <button type="button" class="btn btn-main btn-primary has-tooltip" data-placement="left" title="Menu"> <i class="fa fa-bars"></i> </button>
+    <button type="button" class="btn btn-sub btn-info has-tooltip" data-placement="left" title="Fullscreen"> <i class="fa fa-arrows-alt"></i> </button>
+    <button type="button" class="btn btn-sub btn-danger has-tooltip" data-placement="left" title="Save"> <i class="fa fa-floppy-o"></i> </button>
+    <?= Html::a('<i class="fa fa-plus"></i>', ['listing/create'], ['class' => 'btn btn-sub btn-success has-tooltip','title'=>'Add Listing']) ?>
+  </div>
 </div>
 
 
