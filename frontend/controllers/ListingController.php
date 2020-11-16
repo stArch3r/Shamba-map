@@ -3,18 +3,23 @@
 namespace frontend\controllers;
 
 use Yii;
+use yii\web\UploadedFile;
 use frontend\models\Listing;
 use frontend\models\ListingSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 use frontend\models\Location;
+use frontend\models\Images;
 
 /**
  * ListingController implements the CRUD actions for Listing model.
  */
 class ListingController extends Controller
 {
+
+
+
     /**
      * {@inheritdoc}
      */
@@ -81,7 +86,7 @@ class ListingController extends Controller
         $model = new Location();
         
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['index']);
+            return $this->redirect(['addimages', 'listingId' => $model->listingId]);
         }
         
         return $this->render('addlocation', [
@@ -90,6 +95,22 @@ class ListingController extends Controller
         ]);
     }
     
+
+    public function actionAddimages($listingId)
+    {
+        $model = new Images();
+
+        $model->images = UploadedFile::getInstanceByName('image');
+        
+        if (Yii::$app->request->isPost && $model->save()) {
+            return $this->redirect(['id'=> $model->imageid]);
+        }
+        
+        return $this->render('addimages', [
+            'model' => $model,
+            'listingId'=>$listingId
+        ]);
+    }
 
     /**
      * Updates an existing Listing model.
