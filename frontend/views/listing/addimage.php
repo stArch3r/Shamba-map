@@ -2,7 +2,8 @@
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 ?>
-    <div class="container">
+
+    <div class="container" style="margin-top: 80px;">
     <div class="row">
     <div class="col-lg-12 col-md-12">
         <div class="progress" id="progress1">
@@ -49,5 +50,6 @@ use yii\widgets\ActiveForm;
                     <?php ActiveForm::end() ?>
     </div>
     
+</div>
 </div>
 </div>

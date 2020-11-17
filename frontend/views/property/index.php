@@ -68,12 +68,7 @@ $markers = Location::find()->innerJoinWith('listing')->asArray()->all();
         </div>
         </div>
     </div>
-  
-
-
-        
-          
-         
+     
 
 <div class="row" style="margin-top: 20px">
 
@@ -172,6 +167,7 @@ $markers = Location::find()->innerJoinWith('listing')->asArray()->all();
 </div>        
 </div> 
 </div>
+
 
 <div class="btn-group-fab" role="group" aria-label="FAB Menu">
   <div>

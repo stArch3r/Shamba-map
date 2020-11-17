@@ -71,7 +71,9 @@ background-size: cover;
   height: 70%;
   margin-top: 20px;
 }
-
+.locate{
+  margin-top: 80px;
+}
     /*home page fab*/  
       .btn-group-fab {
       padding-left: 30px;

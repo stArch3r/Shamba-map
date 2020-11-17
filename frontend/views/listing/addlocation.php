@@ -40,99 +40,95 @@ $this->title = 'Add Listing Location'
       </div>
       </div>
       </div>
-   <div class="panel panel-primary">
-    <div class="panel-body">
-      <h3 class="text-on-pannel text-primary"><strong class="text-uppercase"> <?= Html::encode($this->title) ?> </strong></h3>
-            <div class="row">
-                <?php $form = ActiveForm::begin(); ?>
-                     <?= $form->field($model, 'listingId')->hiddenInput(['value'=>$listingId])->label(false) ?>
-      				        <div class="col-md-4 col-sm-6">
-				                <div class="form-horizontal">
-				                
-				                     <div class="form-group">
-				                        <label class="col-md-4 control-label" for="latitude">Latitude:</label>
-				                        <div class="col-md-8">
-				                        
-				                        	<?= $form->field($model, 'lattitude')->textInput(['id'=>'latitude', 'class'=>'form-control latitude'])->label(false) ?>
-				                        	
-				                        </div>
-				                    </div>
-				                    <div class="form-group">
-				                        <label class="col-md-4 control-label" for="longitude">Longitude:</label>
-				                        <div class="col-md-8">
-				                        
-				                        <?= $form->field($model, 'longitude')->textInput(['id'=>'longitude', 'class'=>'form-control longitude'])->label(false) ?>
-				                       
-				                        </div>
-				                    </div>
-				                    <div class="form-group">
-				                        <label class="col-md-4 control-label" for="longitude">Country </label>
-				                        <div class="col-md-8">
-				                         <?= $form->field($model, 'country')->textInput(['maxlength' => true, 'id'=>'country', 'class'=>'form-control country'])->label(false)?>
-				                		
-				                        </div>
-				                    </div>
-				                    <div class="form-group">
-				                        <label class="col-md-4 control-label" for="longitude">Country Region:</label>
-				                        <div class="col-md-8">
-				                        <?= $form->field($model, 'countryRegion')->textInput(['maxlength' => true, 'id'=>'countryRegion', 'class'=>'form-control country-region'])->label(false)?>
-				                		
-				                        </div>
-				                    </div>
-				                    <div class="form-group">
-				                        <label class="col-md-4 control-label" for="longitude">City/Locality:</label>
-				                        <div class="col-md-8">
-				                        
-				                        	 <?= $form->field($model, 'city')->textInput(['maxlength' => true, 'id'=>'locality', 'class'=>'form-control locality'])->label(false) ?>
-				                        
-				                        </div>
-				                    </div>      
-				                    <div class="form-group">
-				                        <label class="col-md-4 control-label" for="street">Street/Road:</label>
-				                        <div class="col-md-8">
-				                        
-				                        	 <?= $form->field($model, 'streetRoad')->textInput(['maxlength' => true, 'id'=>'street', 'class'=>'form-control street'])->label(false) ?>
-				                            
-				                        </div>
-				                    </div>
-				                   <div class="form-group">
-				                        <label class="col-md-4 control-label" for="street">Address:</label>
-				                        <div class="col-md-8">
-				                        
-				                        	 <?= $form->field($model, 'address')->textInput(['maxlength' => true, 'id'=>'address', 'class'=>'form-control address'])->label(false) ?>
-				                            
-				                        </div>
-				                    </div>
-				                    <div class="form-group">
-				                        <label class="col-md-4 control-label" for="street">Vicinity:</label>
-				                        <div class="col-md-8">
-				                        
-				                        	 <?= $form->field($model, 'vicinity')->textInput(['maxlength' => true, 'id'=>'vicinity', 'class'=>'form-control vicinity'])->label(false) ?>
-				                            
-				                        </div>
-				                    </div>
-				                  
-				                                                       
-				                </div>
-						   
-				                
-				            </div>
-				           
-				             	<div class="col-md-8 col-sm-6">
-				             	    <input id="searchInput" class="input-controls" type="text" placeholder="Search locations"/>
-                                     <div class="map" id="map" style="width: 100%; height: 550px;"></div>
-								</div>
 
-						</div><br>
-						<div class="row">
-						    <div class="form-group col-md-12">
-                                <?= Html::submitButton('Next <span class="fa fa-forward"></span>', ['class' => 'btn btn-warning pull-right']) ?>
-                            </div>
-						</div>	
-        		</div>
+      <div class="locate">
+      <div class="row mt-80px" >
+      	<div class="col-md-6">
+      		 <h3 class="text-on-pannel text-primary"><strong class="text-uppercase"> <?= Html::encode($this->title) ?> </strong></h3>
+
+      			<?php $form = ActiveForm::begin(); ?>
+                     <?= $form->field($model, 'listingId')->hiddenInput(['value'=>$listingId])->label(false) ?>
+      		<div class="row">
+      		<div class="col-md-4">
+      		<label class="col-md-4 control-label" for="latitude">Latitude:</label>
+      	</div>
+      	<div class="col-md-8">
+      		<?= $form->field($model, 'lattitude')->textInput(['id'=>'latitude', 'class'=>'form-control latitude'])->label(false) ?>
+      	</div>
+      	</div>
+      	<div class="row">
+      		<div class="col-md-4">
+      		<label class="col-md-4 control-label" for="longitude">Longitude:</label>
+      	</div>
+      	<div class="col-md-8">
+      		 <?= $form->field($model, 'longitude')->textInput(['id'=>'longitude', 'class'=>'form-control longitude'])->label(false) ?>
+      	</div>
+      	</div>
+      		<div class="row">
+      		<div class="col-md-4">
+      			<label class="col-md-4 control-label" for="longitude">Country </label>
+      	</div>
+      	<div class="col-md-8">
+      		 <?= $form->field($model, 'country')->textInput(['maxlength' => true, 'id'=>'country', 'class'=>'form-control country'])->label(false)?>
+      	</div>
+      	</div>
+      		<div class="row">
+      		<div class="col-md-4">
+      		<label class="col control-label" for="longitude">Country Region:</label>
+      	</div>
+      	<div class="col-md-8">
+      		  <?= $form->field($model, 'countryRegion')->textInput(['maxlength' => true, 'id'=>'countryRegion', 'class'=>'form-control country-region'])->label(false)?>
+      	</div>
+      	</div>
+      		<div class="row">
+      		<div class="col-md-4">
+      		<label class="col-md-4 control-label" for="longitude">City/Locality:</label>
+      	</div>
+      	<div class="col-md-8">
+      		<?= $form->field($model, 'city')->textInput(['maxlength' => true, 'id'=>'locality', 'class'=>'form-control locality'])->label(false) ?>
+      	</div>
+      	</div>
+      		<div class="row">
+      		<div class="col-md-4">
+      			<label class="col-md-4 control-label" for="street">Street/Road:</label>
+      	</div>
+      	<div class="col-md-8">
+      		 <?= $form->field($model, 'streetRoad')->textInput(['maxlength' => true, 'id'=>'street', 'class'=>'form-control street'])->label(false) ?>
+      	</div>
+      	</div>
+      		<div class="row">
+      		<div class="col-md-4">
+      		<label class="col-md-4 control-label" for="street">Address:</label>
+      	</div>
+      	<div class="col-md-8">
+      		<?= $form->field($model, 'address')->textInput(['maxlength' => true, 'id'=>'address', 'class'=>'form-control address'])->label(false) ?>
+      	</div>
+      	</div>
+
+      		<div class="row">
+      		<div class="col-md-4">
+      			<label class="col-md-4 control-label" for="street">Vicinity:</label>
+      	</div>
+      	<div class="col-md-8">
+      		<?= $form->field($model, 'vicinity')->textInput(['maxlength' => true, 'id'=>'vicinity', 'class'=>'form-control vicinity'])->label(false) ?>
+      	</div>
+      	</div>
+      	</div>
+      	<div class="col-md-6">
+      		<input id="searchInput" class="input-controls" type="text" placeholder="Search locations"/>
+            <div class="map" id="map"></div>
+      	</div>      	
+     
+		<div class="row">
+		    <div class="col-md-12">
+            <?= Html::submitButton('Next <span class="fa fa-forward"></span>', ['class' => 'btn btn-warning pull-right']) ?>
+            </div>
+		</div>	
                 <?php ActiveForm::end(); ?>
-              </div>
+             
        </div>
+  </div>
+</div>
 
 
 
