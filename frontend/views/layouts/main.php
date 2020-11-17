@@ -39,8 +39,8 @@ AppAsset::register($this);
     ]);
     echo Nav::widget([
         'items' => [
-            ['label' => 'Search By Location', 'url' => ['/site/index'],'options'=>['class'=>'nav-location']],
-            ['label' => 'Search By Company', 'url' => ['/site/about'],'options'=>['class'=>'navglobe-pright']],
+            ['label' => 'List Property', 'url' => ['/site/index'],'options'=>['class'=>'nav-location']],
+            ['label' => 'Buy Property', 'url' => ['/site/about'],'options'=>['class'=>'navglobe-pright']],
             [
                 'label' => '<i class="fa fa-globe fa-fw fa-lg"></i>',
                 'items' => [
