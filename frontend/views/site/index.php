@@ -28,15 +28,12 @@ $this->title = 'SHAMBANI';
 <div class="row1">
 <div class="row">
     <div class="col-md-3">
-        <div class="row">
-            <div class="col-md-8">
+       
              <img class="card-img" src="<?= Yii::$app->request->baseUrl;?>/images/hse.jpeg" alt="Card image cap">
-            </div>
-            <div class="col-md-4">
+            
            <h3> Mombasa </h3> 
             <h6>7 hours drive  </h6> 
-            </div>
-        </div>
+          
     </div>
     <div class="col-md-3">
         <div class="row">
@@ -158,9 +155,6 @@ $this->title = 'SHAMBANI';
             <h6> Interactive activities you can do together, led by expert hosts.</h6> 
             </div>
         </div> 
-    </div>
-
-    <div class="row1">
         <div class="row">
             <div class="col-md-6">
                 <img class="card-img1" src="<?= Yii::$app->request->baseUrl;?>/images/land.jpeg" alt="Card image cap">

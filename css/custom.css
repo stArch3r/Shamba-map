@@ -19,7 +19,9 @@ body {
   background-color: yellow !important;
 } */
 .serchbar{
-background-image: url("images/home.svg");
+background-image: url("images/bg.jpg");
+background-repeat: no-repeat;
+background-size: cover;
 }
 .explore{
   padding-top:200px;
@@ -28,6 +30,7 @@ background-image: url("images/home.svg");
   padding-left: 30px;
    font-size: 90px;
    line-height: 105px;
+   
    color: #000000;
 }
 .explore button{
@@ -152,7 +155,7 @@ background-image: url("images/home.svg");
     position: absolute;
     left: 0px;
     font-weight: 800;
-    padding: 3px 30px 2px 10px;
+    padding: 30px 300px 20px 100px;
     color: rgb(255, 255, 255);
     background-color: rgba(25, 25, 25, 0.2);
 }
