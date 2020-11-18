@@ -13,23 +13,37 @@ $this->params['breadcrumbs'][] = $this->title;
 <div class="site-signup">
     <h1><?= Html::encode($this->title) ?></h1>
 
-    <p>Please fill out the following fields to signup:</p>
+    <div class="container" style="width:75%; margin-top:4%">
+        <div class="card card0 border-2" style ="background:#6e6c69;">
+          <div class="row">
+          <div class="col-md-7">
 
-    <div class="row">
-        <div class="col-lg-5">
-            <?php $form = ActiveForm::begin(['id' => 'form-signup']); ?>
+            <img src="../assets/images/shambani.png" style="margin-top: 17%; margin-left:3% "
+            "class="rounded" alt="Cinque Terre" >
 
-                <?= $form->field($model, 'username')->textInput(['autofocus' => true]) ?>
+          </div>
+          <div class="col-md-5">
 
-                <?= $form->field($model, 'email') ?>
+        <h1><?= Html::encode($this->title) ?></h1>
 
-                <?= $form->field($model, 'password')->passwordInput() ?>
+        <div class="d-flex sign-form">
 
-                <div class="form-group">
-                    <?= Html::submitButton('Signup', ['class' => 'btn btn-primary', 'name' => 'signup-button']) ?>
-                </div>
+      <div class="right" style="background:white; width: 350px; height: 550px; padding:2px;">
+            <div class="col-lg-8">
+                    <?php $form = ActiveForm::begin(['id' => 'form-signup']); ?>
+                    <h4>Signup</h4>
+                    <a href="#" class="google btn">
+                     <i class="fa fa-google fa-fw"></i> continue with Google account
+                       </a>
+                    <?= $form->field($model, 'username')->textInput(['autofocus' => true]) ?>
 
-            <?php ActiveForm::end(); ?>
-        </div>
+                    <?= $form->field($model, 'password')->passwordInput() ?>
+
+
+
+                    <div class="form-group">
+                        <?= Html::submitButton('Signup', ['class' => 'btn btn-primary', 'name' => 'signup-button']) ?>
+
+                <?php ActiveForm::end(); ?>
+          </div>
     </div>
-</div>
