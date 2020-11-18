@@ -12,27 +12,7 @@ $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="message-index">
 
-    <!--<h1><?= Html::encode($this->title) ?></h1>
-
-    <p>
-        <?= Html::a('Create Message', ['create'], ['class' => 'btn btn-success']) ?>
-    </p>
-
-    <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
-
-    <?= GridView::widget([
-        'dataProvider' => $dataProvider,
-        'filterModel' => $searchModel,
-        'columns' => [
-            ['class' => 'yii\grid\SerialColumn'],
-
-            'subjectId',
-            'message:ntext',
-
-            ['class' => 'yii\grid\ActionColumn'],
-        ],
-    ]); ?> -->
-	<div class="col-container-fluid d-flex h-100 flex-column ">
+<div class="col-container-fluid d-flex h-100 flex-column ">
   <div class="row">
     <div class="col-4 border-right border-top boarder-left">
 		<h4>Messages
@@ -68,31 +48,15 @@ $this->params['breadcrumbs'][] = $this->title;
 		<h6><b>You have unread messages</b></h6>
 		<br>
 			<p>When you book a site trip or experience,<br>messages from your seller will show up here</p>
-						<p>
-							<?= Html::a('Create Message', ['create'], ['class' => 'btn btn-success']) ?>
-						</p>
-					
+				<div class="col-auto">
+					<button class="btn btn-outline-secondary border-left rounded rounded-right rounded-left" type="button">
+						Explore shambani
+					</button>
+				</div>
 	</div>
-    <div class="col-4 border-right border-top" style="height: 36rem;">
-	<?= GridView::widget([
-        'dataProvider' => $dataProvider,
-        'filterModel' => $searchModel,
-        'columns' => [
-            ['class' => 'yii\grid\SerialColumn'],
-
-            'subjectId',
-            'message:ntext',
-
-            ['class' => 'yii\grid\ActionColumn'],
-        ],
-    ]); ?>
-	
-	
-	
-	</div>
+    <div class="col-4 border-right border-top" style="height: 36rem;"></div>
 	<div class="col-4 border-right border-top" style="height: 36rem;"></div>
   </div>
 </div>
-
 
 </div>
