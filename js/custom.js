@@ -4,3 +4,12 @@ $(function() {
   });
   $('has-tooltip').tooltip();
 });
+
+$('.contact').click(function(e){
+    e.preventDefault();
+     $.get('create',function(data){
+    $('#contact').modal('show')
+      .find('#contactContent')
+      .html(data);
+      });
+});
