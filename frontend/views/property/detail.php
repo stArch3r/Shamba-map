@@ -24,7 +24,7 @@ $this->title = 'SHAMBANI';
    <div class="row">
      <div class="col-sm-8" style="margin-left:52%">
     <h4>Over view</h4>
-   <div class="card border-success mb-3" style="max-width: 120rem;">
+   <div class="card border-success mb-3" style="max-width: 120rem; height:70%">
   <div class="card-header">Property details</div>
   <div class="card-body text-dark">
     <h5 class="card-title">Ruiru land</h5>
