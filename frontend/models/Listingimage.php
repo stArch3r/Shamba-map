@@ -1,6 +1,9 @@
 <?php
+
 namespace frontend\models;
+
 use Yii;
+
 /**
  * This is the model class for table "listingimage".
  *
@@ -12,7 +15,6 @@ use Yii;
  */
 class Listingimage extends \yii\db\ActiveRecord
 {
-    public $image;
     /**
      * {@inheritdoc}
      */
@@ -20,6 +22,7 @@ class Listingimage extends \yii\db\ActiveRecord
     {
         return 'listingimage';
     }
+
     /**
      * {@inheritdoc}
      */
@@ -28,12 +31,11 @@ class Listingimage extends \yii\db\ActiveRecord
         return [
             [['listingId', 'image'], 'required'],
             [['listingId'], 'integer'],
+            [['image'], 'string', 'max' => 255],
             [['listingId'], 'exist', 'skipOnError' => true, 'targetClass' => Listing::className(), 'targetAttribute' => ['listingId' => 'listingId']],
-            [['image'], 'file'],
-            [['image'], 'safe'],
-        
         ];
     }
+
     /**
      * {@inheritdoc}
      */
@@ -45,13 +47,23 @@ class Listingimage extends \yii\db\ActiveRecord
             'image' => 'Image',
         ];
     }
+
     /**
      * Gets query for [[Listing]].
      *
-     * @return \yii\db\ActiveQuery
+     * @return \yii\db\ActiveQuery|yii\db\ActiveQuery
      */
     public function getListing()
     {
         return $this->hasOne(Listing::className(), ['listingId' => 'listingId']);
+    }
+
+    /**
+     * {@inheritdoc}
+     * @return ListingimageQuery the active query used by this AR class.
+     */
+    public static function find()
+    {
+        return new ListingimageQuery(get_called_class());
     }
 }

@@ -20,6 +20,7 @@ use Yii;
  */
 class Listing extends \yii\db\ActiveRecord
 {
+   
     /**
      * {@inheritdoc}
      */
@@ -41,6 +42,7 @@ class Listing extends \yii\db\ActiveRecord
             [['createdAt'], 'safe'],
             [['listingName', 'size'], 'string', 'max' => 255],
             [['videoUrl'], 'string', 'max' => 300],
+            
         ];
     }
 
@@ -50,14 +52,14 @@ class Listing extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'listingId' => 'Listing ID',
-            'listingName' => 'Listing Name',
-            'listingDesc' => 'Listing Desc',
-            'videoUrl' => 'Video Url',
-            'size' => 'Size',
-            'price' => 'Price',
-            'status' => 'Status',
-            'createdAt' => 'Created At',
+            'listingId' => Yii::t('app', 'Listing ID'),
+            'listingName' => Yii::t('app', 'Listing Name'),
+            'listingDesc' => Yii::t('app', 'Listing Desc'),
+            'videoUrl' => Yii::t('app', 'Video Url'),
+            'size' => Yii::t('app', 'Size'),
+            'price' => Yii::t('app', 'Price'),
+            'status' => Yii::t('app', 'Status'),
+            'createdAt' => Yii::t('app', 'Created At'),
         ];
     }
 

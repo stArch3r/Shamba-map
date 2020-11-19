@@ -110,7 +110,9 @@ class ListingController extends Controller
          $model->image->saveAs('uploads/'.$imageName.'.'.$model->image->extension);
             //save in the db
          $model->image ='uploads/'.$imageName.'.'.$model->image->extension;
-         
+         $model->save();
+
+
          return $this->redirect(['/property/index']);
         }
  

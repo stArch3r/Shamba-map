@@ -34,12 +34,12 @@ class Location extends \yii\db\ActiveRecord
      */
     public function rules()
     {
-        return [
-            [['listingId', 'country', 'countryRegion', 'city', 'streetRoad', 'lattitude', 'longitude'], 'required'],
+       return [
+            [['listingId', 'address', 'country', 'countryRegion', 'city', 'lattitude', 'longitude'], 'required'],
             [['listingId'], 'integer'],
             [['lattitude', 'longitude'], 'number'],
             [['createdAt'], 'safe'],
-            [['country', 'countryRegion', 'city', 'streetRoad'], 'string', 'max' => 255],
+            [['address', 'country', 'countryRegion', 'city', 'streetRoad', 'vicinity'], 'string', 'max' => 255],
             [['listingId'], 'exist', 'skipOnError' => true, 'targetClass' => Listing::className(), 'targetAttribute' => ['listingId' => 'listingId']],
         ];
     }

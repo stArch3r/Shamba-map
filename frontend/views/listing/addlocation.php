@@ -116,7 +116,7 @@ $this->title = 'Add Listing Location'
       	</div>
       	<div class="col-md-6">
       		<input id="searchInput" class="input-controls" type="text" placeholder="Search locations"/>
-            <div class="map" id="map"></div>
+            <div class="map" id="map" style="width: 100%; height: 400px;"> </div>
       	</div>      	
      
 		<div class="row">

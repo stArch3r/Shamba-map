@@ -104,7 +104,7 @@ $markers = Location::find()->innerJoinWith('listing')->asArray()->all();
    
     <div class="card-deck">
     <div class="card text-center">
-        <img class="card-img-top" src="<?= Yii::$app->request->baseUrl;?>/images/hse2.jpeg" alt="Card image cap">
+        <img class="card-img-top" src="<?= Yii::$app->request->baseUrl;?>/images/sale.jpeg" alt="Card image cap">
             <div class="card-block">
                 <h4 class="card-title">Permits</h4>
                 <p class="card-text">
