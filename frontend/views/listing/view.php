@@ -38,6 +38,9 @@ $this->params['breadcrumbs'][] = $this->title;
             'status',
             'createdAt',
         ],
+        
     ]) ?>
 
 </div>
+
+

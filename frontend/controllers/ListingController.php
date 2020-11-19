@@ -113,7 +113,7 @@ class ListingController extends Controller
          $model->save();
 
 
-         return $this->redirect(['/property/index']);
+         return $this->redirect(['index']);
         }
  
         return $this->render('addimage', [
