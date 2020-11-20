@@ -171,4 +171,24 @@ class ListingController extends Controller
 
         throw new NotFoundHttpException('The requested page does not exist.');
     }
+public function actiondisplay()
+{
+    $query= Results::find()
+        ->innerJoin("(SELECT listingId FROM location 
+            WHERE listingId = :listingId 
+            GROUP BY listingId)" , [
+                'listingId '=> \Yii::$app->listing->listingId ] )
+
+
+    $dataProvider = new ActiveDataProvider([
+        'query'=>$query
+    ]);
+
+    return $this->render('/property/index',[
+        'dataProvider'=>$dataProvider,
+    ]);
+
+}
+
+
 }
