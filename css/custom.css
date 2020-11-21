@@ -237,3 +237,9 @@ background-size: cover;
 .panel-body {
   padding-top: 30px !important;
 }
+.picture{
+  padding-bottom: 5px;
+  width:20%;
+
+
+}

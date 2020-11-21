@@ -171,7 +171,8 @@ class ListingController extends Controller
 
         throw new NotFoundHttpException('The requested page does not exist.');
     }
-public function actiondisplay()
+
+ /**public function actiondisplay()
 {
     $query= Results::find()
         ->innerJoin("(SELECT listingId FROM location 
@@ -189,6 +190,6 @@ public function actiondisplay()
     ]);
 
 }
-
+*/
 
 }

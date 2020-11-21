@@ -73,15 +73,10 @@ class Listing extends \yii\db\ActiveRecord
         return $this->hasMany(Location::className(), ['listingId' => 'listingId']);
     }
 
-
-    public function getImageLink()
+    public function getListingImage()
     {
 
        return $this->hasOne(Listingimage::className(), ['listingId' => 'listingId']);
     }
-     public function getImage()
-    {
-
-        return Yii::$app->params['frontendUrl'].'/uploads/'.$this->image;
-    }
+    
 }

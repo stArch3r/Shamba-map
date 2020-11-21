@@ -9,8 +9,8 @@ use frontend\models\Listing;
 $this->title = 'Property Index';
 
 $markers = Location::find()->innerJoinWith('listing')->asArray()->all();
-$listings= Listing::find()->all();
-$locations= Location::find()->all();
+$listingdetails = Listing::find()->innerJoinWith('locations')->all();
+
 ?>
 
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBmnULnIcTW4J_9NxGeHhLSVLme6Ba36AE&callback=initMap&libraries=&v=weekly" defer></script>
@@ -62,9 +62,9 @@ $locations= Location::find()->all();
                 <button type="button" class="btn btn-primary pull-right">Get Loan</button>
             </div>
             <div class="col-md-4">
-               <button type="button" class="btn btn-primary pull-right">
-                 <?= Html::a('List Property',  ['listing/create'], ['class' => 'btn btn-sub btn-primary']) ?>
-                 </button>
+               
+                 <p><a href="<?= Url::to(['listing/create'])?>"> <button type="button" class="btn btn-primary pull-right">List Property</button></a></p>
+            
             </div>
             
         </div>
@@ -104,24 +104,19 @@ $locations= Location::find()->all();
         </div> 
     </div>
    
-   <?php foreach ($listings as $listing ) {?>
-        <div class="card-deck">
-        <div class="card text-center">
-            <img class="card-img-top" src="<?= Yii::$app->request->baseUrl;?>/images/sale.jpeg" alt="Card image cap">
-                <div class="card-block">
-                    <h4 class="card-title"><?=$listing->listingName ?></h4>
-                    <p class="card-text">
-                        <?=$listing->price ?>;
-                       <br> <?=$listing->size ?>;
-                        
-
+   <?php foreach ($listingdetails as $listing ) {?>
+    <div class="rowt d-flex">
+        <div class="picture">
+            <img class="card-i" src="<?= Yii::$app->request->baseUrl;?>/images/sale.jpeg" alt="Card image cap">
+                <br>
+                <h4><?=$listing->listingName ?></h4> 
+                <p >
+                        <?=$listing->price ?>
+                       <br> <?=$listing->size ?>
+                       <br><?=$listing->locations[0]->city?>
                     </p>
-                </div>
-                <div class="card-footer">
-                    Link
-                </div>
-            </div>
         </div>
+    </div>
       <?php } ?>
 </div>
 </div>
@@ -137,7 +132,6 @@ $locations= Location::find()->all();
     <?= Html::a('<i class="fa fa-plus"></i>', ['listing/create'], ['class' => 'btn btn-sub btn-success has-tooltip','title'=>'Add Listing']) ?>
   </div>
 </div>
-
 
 <script type="text/javascript">
       // Initialize and add the map
