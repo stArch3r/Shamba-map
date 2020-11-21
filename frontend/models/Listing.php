@@ -78,5 +78,11 @@ class Listing extends \yii\db\ActiveRecord
 
        return $this->hasOne(Listingimage::className(), ['listingId' => 'listingId']);
     }
+
+  public function getImageLink()
+    {
+
+       return Yii::$app->params['frontendUrl']. '/uploads/'.$this->listingId;
+    }
     
 }

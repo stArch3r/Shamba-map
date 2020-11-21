@@ -1,8 +1,10 @@
 <?php
 use yii\helpers\Url;
 use yii\helpers\Html;
+use yii\helpers\StringHelper;
 use frontend\models\Location;
 use frontend\models\Listing;
+use frontend\models\ListingImage;
 
 /* @var $this yii\web\View */
 
@@ -132,6 +134,8 @@ $listingdetails = Listing::find()->innerJoinWith('locations')->all();
     <?= Html::a('<i class="fa fa-plus"></i>', ['listing/create'], ['class' => 'btn btn-sub btn-success has-tooltip','title'=>'Add Listing']) ?>
   </div>
 </div>
+
+
 
 <script type="text/javascript">
       // Initialize and add the map
