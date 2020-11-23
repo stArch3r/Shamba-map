@@ -8,12 +8,18 @@ class PropertyController extends \yii\web\Controller
     {
         return $this->render('index');
     }
+
     public function actionDetail()
-      {
-          return $this->render('detail');
-      }
-      public function actionContact()
-  {
-      return $this->renderAjax('contact');
-  }
+    {
+        return $this->render('detail');
+    }
+
+        public function actionCaller()
+        {
+            return $this->renderAjax('caller');
+        }
+         public function actionBook()
+        {
+          return $this->renderAjax('book');
+        }
 }
