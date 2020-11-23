@@ -5,9 +5,9 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model frontend\models\Message */
 
-$this->title = 'Update Message: ' . $model->message_id;
+$this->title = 'Update Message: ' . $model->subjectId;
 $this->params['breadcrumbs'][] = ['label' => 'Messages', 'url' => ['index']];
-$this->params['breadcrumbs'][] = ['label' => $model->message_id, 'url' => ['view', 'id' => $model->message_id]];
+$this->params['breadcrumbs'][] = ['label' => $model->subjectId, 'url' => ['view', 'id' => $model->subjectId]];
 $this->params['breadcrumbs'][] = 'Update';
 ?>
 <div class="message-update">
