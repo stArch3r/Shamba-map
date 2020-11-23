@@ -22,8 +22,11 @@ body {
 }
 
 .jumbotron {
-    text-align: left;
-    background-color: transparent;
+    background-color: black;
+}
+.jumbotron .row{
+    text-decoration: white;
+    background-color: black;
 }
 
 .jumbotron .btn {
@@ -117,9 +120,4 @@ a.desc:after {
 
 .nav > li > form > button.logout:focus {
     outline: none;
-}
-
-.row > input-group{
-    width: 400px;
-    margin-left: 10%;
 }

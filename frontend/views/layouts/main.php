@@ -22,6 +22,7 @@ AppAsset::register($this);
     <?php $this->registerCsrfMetaTags() ?>
     <title><?= Html::encode($this->title) ?></title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
    <?php $this->head() ?>
 </head>
 <body>
@@ -38,8 +39,8 @@ AppAsset::register($this);
     ]);
     echo Nav::widget([
         'items' => [
-            ['label' => 'Search By Location', 'url' => ['/site/index'],'options'=>['class'=>'nav-location']],
-            ['label' => 'Search By Company', 'url' => ['/site/about'],'options'=>['class'=>'navglobe-pright']],
+            ['label' => 'List Property', 'url' => ['/site/index'],'options'=>['class'=>'nav-location']],
+            ['label' => 'Buy Property', 'url' => ['/site/about'],'options'=>['class'=>'navglobe-pright']],
             [
                 'label' => '<i class="fa fa-globe fa-fw fa-lg"></i>',
                 'items' => [
@@ -66,13 +67,12 @@ AppAsset::register($this);
      
     ?>
 
-    <div class="container-fluid">
+    
         <?= Breadcrumbs::widget([
             'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
         ]) ?>
         <?= Alert::widget() ?>
         <?= $content ?>
-    </div>
 </div>
 
 <footer class="footer">

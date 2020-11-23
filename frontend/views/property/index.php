@@ -1,13 +1,17 @@
 <?php
 use yii\helpers\Url;
 use yii\helpers\Html;
+use yii\helpers\StringHelper;
 use frontend\models\Location;
+use frontend\models\Listing;
+use frontend\models\ListingImage;
 
 /* @var $this yii\web\View */
 
 $this->title = 'Property Index';
 
 $markers = Location::find()->innerJoinWith('listing')->asArray()->all();
+$listingdetails = Listing::find()->innerJoinWith('locations')->all();
 
 ?>
 
@@ -60,20 +64,15 @@ $markers = Location::find()->innerJoinWith('listing')->asArray()->all();
                 <button type="button" class="btn btn-primary pull-right">Get Loan</button>
             </div>
             <div class="col-md-4">
-               <button type="button" class="btn btn-primary pull-right">
-                 <?= Html::a('List Property',  ['listing/create'], ['class' => 'btn btn-sub btn-primary']) ?>
-                 </button>
+               
+                 <p><a href="<?= Url::to(['listing/create'])?>"> <button type="button" class="btn btn-primary pull-right">List Property</button></a></p>
+            
             </div>
             
         </div>
         </div>
     </div>
-  
-
-
-        
-          
-         
+     
 
 <div class="row" style="margin-top: 20px">
 
@@ -107,71 +106,25 @@ $markers = Location::find()->innerJoinWith('listing')->asArray()->all();
         </div> 
     </div>
    
-    <div class="card-deck">
-    <div class="card text-center">
-        <img class="card-img-top" src="<?= Yii::$app->request->baseUrl;?>/images/hse2.jpeg" alt="Card image cap">
-            <div class="card-block">
-                <h4 class="card-title">Permits</h4>
-                <p class="card-text">
-                    Apply for parking permit
-                    <br> View existing permit requests
-                    <br> Activate Visitor permits
-                    <br>
-                </p>
-            </div>
-            <div class="card-footer">
-                Link
-            </div>
-        </div>
-
-        <div class="card text-center">
-            <img class="card-img-top" src="<?= Yii::$app->request->baseUrl;?>/images/hse3.jpeg" alt="Card image cap">
-            <div class="card-block">
-                <h4 class="card-title">Parking Tickets</h4>
-                <p class="card-text">
-                    View your parking ticket history
-                </p>
-            </div>
-            <div class="card-footer">
-                Link
-            </div>
+   <?php foreach ($listingdetails as $listing ) {?>
+    <div class="rowt d-flex">
+        <div class="picture">
+            <img class="card-i" src="<?= Yii::$app->request->baseUrl;?>/images/sale.jpeg" alt="Card image cap">
+                <br>
+                <h4><?=$listing->listingName ?></h4> 
+                <p >
+                        <?=$listing->price ?>
+                       <br> <?=$listing->size ?>
+                       <br><?=$listing->locations[0]->city?>
+                    </p>
         </div>
     </div>
-    <div class="card-deck mt-4">
-        <div class="card text-center">
-           <img class="card-img-top" src="<?= Yii::$app->request->baseUrl;?>/images/hse.jpeg" alt="Card image cap">
-            <div class="card-block">
-                <h4 class="card-title">Funding Options</h4>
-                <p class="card-text">
-                    Add credit/debit card
-                    <br> Top up Account
-                    <br> Manage cards
-                </p>
-            </div>
-            <div class="card-footer">
-                Link
-            </div>
-        </div>
-
-        
-        <div class="card text-center">
-            <img class="card-img-top" src="<?= Yii::$app->request->baseUrl;?>/images/land1.jpeg" alt="Card image cap">
-            <div class="card-block">
-                <h4 class="card-title">User Settings</h4>
-                <p class="card-text">
-                    Edit personal details
-                    <br> Change top-up settings
-                    <br> Change password
-                </p>
-            </div>
-            <div class="card-footer">
-                Link
-            </div>
-        </div>
-    </div>
-</div>        
-</div> 
+      <?php } ?>
 </div>
+</div>
+</div>
+    
+
 
 <div class="btn-group-fab" role="group" aria-label="FAB Menu">
   <div>
@@ -181,6 +134,7 @@ $markers = Location::find()->innerJoinWith('listing')->asArray()->all();
     <?= Html::a('<i class="fa fa-plus"></i>', ['listing/create'], ['class' => 'btn btn-sub btn-success has-tooltip','title'=>'Add Listing']) ?>
   </div>
 </div>
+
 
 
 <script type="text/javascript">

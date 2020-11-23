@@ -3,18 +3,23 @@
 namespace frontend\controllers;
 
 use Yii;
+use yii\web\UploadedFile;
 use frontend\models\Listing;
 use frontend\models\ListingSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 use frontend\models\Location;
+use frontend\models\Listingimage;
 
 /**
  * ListingController implements the CRUD actions for Listing model.
  */
 class ListingController extends Controller
 {
+
+
+
     /**
      * {@inheritdoc}
      */
@@ -63,25 +68,25 @@ class ListingController extends Controller
      * If creation is successful, the browser will be redirected to the 'view' page.
      * @return mixed
      */
-    public function actionCreate()
+   public function actionCreate()
     {
         $model = new Listing();
-
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['addlocation', 'listingId' => $model->listingId]);
+                        
+            return $this->redirect(['addlocation', 'addimage', 'listingId' => $model->listingId]);
         }
-
         return $this->render('create', [
             'model' => $model,
         ]);
     }
+    
     
     public function actionAddlocation($listingId)
     {
         $model = new Location();
         
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['index']);
+            return $this->redirect(['addimage', 'listingId' => $model->listingId]);
         }
         
         return $this->render('addlocation', [
@@ -90,6 +95,32 @@ class ListingController extends Controller
         ]);
     }
     
+
+    public function actionAddimage($listingId)
+    {
+        $model = new Listingimage();
+        
+        if ($model->load(Yii::$app->request->post())) 
+        {
+           //generates images with unique names
+        $imageName = bin2hex(openssl_random_pseudo_bytes(10));
+        $model->image = UploadedFile::getInstance($model, 'image');
+       
+        //saves file in the root directory
+         $model->image->saveAs('uploads/'.$imageName.'.'.$model->image->extension);
+            //save in the db
+         $model->image ='uploads/'.$imageName.'.'.$model->image->extension;
+         $model->save();
+
+
+         return $this->redirect(['index']);
+        }
+ 
+        return $this->render('addimage', [
+            'model' => $model,
+            'listingId' => $listingId,
+        ]);
+    }
 
     /**
      * Updates an existing Listing model.

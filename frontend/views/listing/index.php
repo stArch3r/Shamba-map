@@ -34,6 +34,13 @@ $this->params['breadcrumbs'][] = $this->title;
             //'price',
             //'status',
             //'createdAt',
+            [
+                'attribute'=> 'image',
+                'content'=> function($model){
+                    return $this->render('_image_item',['model'=> $model]);
+                }
+            ],
+
 
             ['class' => 'yii\grid\ActionColumn'],
         ],
