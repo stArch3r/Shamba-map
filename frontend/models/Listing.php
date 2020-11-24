@@ -82,7 +82,7 @@ class Listing extends \yii\db\ActiveRecord
   public function getImageLink()
     {
 
-       return Yii::$app->params['frontendUrl']. '/uploads/'.$this->listingId;
+       return Yii::$app->params['frontendUrl']. 'shamba-map/uploads/'.$this->image;
     }
     
 }

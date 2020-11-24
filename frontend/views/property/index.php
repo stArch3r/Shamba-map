@@ -13,6 +13,7 @@ $this->title = 'Property Index';
 $markers = Location::find()->innerJoinWith('listing')->asArray()->all();
 $listingdetails = Listing::find()->innerJoinWith('locations')->all();
 
+$imagedetails = Listing::find()->innerJoinWith('listingImage')->all();
 ?>
 
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBmnULnIcTW4J_9NxGeHhLSVLme6Ba36AE&callback=initMap&libraries=&v=weekly" defer></script>
@@ -92,7 +93,10 @@ $listingdetails = Listing::find()->innerJoinWith('locations')->all();
         </div>
         <div class="col-md-5">
             <div class="row">
+              <div class="col-md-5">
             <h5> Sort By: </h5> 
+              </div>
+              <div class="col-md-7">
                     <button type="button" class="btn btn-outline-dark pull-up dropdown-toggle" data-toggle="dropdown">Newest</button>
                     <div class="dropdown-menu">
                         <a class="dropdown-item" href="#">Price (High to Low)</a>
@@ -101,25 +105,37 @@ $listingdetails = Listing::find()->innerJoinWith('locations')->all();
                         <a class="dropdown-item" href="#">Bedrooms</a>
                         <a class="dropdown-item" href="#">Bathrooms</a>
                         <a class="dropdown-item" href="#">Square feet</a>
-                    </div>      
+                    </div>   
+                   </div>    
             </div>
         </div> 
     </div>
-   
-   <?php foreach ($listingdetails as $listing ) {?>
-    <div class="rowt d-flex">
-        <div class="picture">
-            <img class="card-i" src="<?= Yii::$app->request->baseUrl;?>/images/sale.jpeg" alt="Card image cap">
-                <br>
-                <h4><?=$listing->listingName ?></h4> 
-                <p >
-                        <?=$listing->price ?>
-                       <br> <?=$listing->size ?>
-                       <br><?=$listing->locations[0]->city?>
-                    </p>
-        </div>
-    </div>
+    <div class="row">
+
+    <?php foreach ($imagedetails as $pic ) {?>
+
+      <?php   var_dump( \Yii::$app->request->baseUrl.'/'.$pic['image']); ?>
       <?php } ?>
+
+   <?php foreach ($listingdetails as $listing ) {?>
+        <div class="col-md-6">
+         <div class="card" style="width: 18rem;">
+
+        <img src="<?=$listing->image ?>" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title"><?=$listing->listingName ?></h5>
+          <p class="card-text"> <?=$listing->price ?>
+            <br> <?=$listing->size ?>
+            <br><?=$listing->locations[0]->city?>
+          </p>
+          <a href="#" class="btn btn-primary">Go somewhere</a>
+        </div>
+      </div>
+    </div>
+    <br>
+      <?php } ?>
+    </div>
+
 </div>
 </div>
 </div>
