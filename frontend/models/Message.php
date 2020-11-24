@@ -7,7 +7,7 @@ use Yii;
 /**
  * This is the model class for table "message".
  *
- * @property int $message_id
+ * @property int $subjectId
  * @property string $message
  */
 class Message extends \yii\db\ActiveRecord
@@ -26,10 +26,8 @@ class Message extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['message_id', 'message'], 'required'],
-            [['message_id'], 'integer'],
+            [['message'], 'required'],
             [['message'], 'string'],
-            [['message_id'], 'unique'],
         ];
     }
 
@@ -39,7 +37,7 @@ class Message extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'message_id' => 'Message ID',
+            'subjectId' => 'Subject ID',
             'message' => 'Message',
         ];
     }
