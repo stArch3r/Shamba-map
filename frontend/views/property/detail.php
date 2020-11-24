@@ -3,7 +3,7 @@ use yii\helpers\Html;
 
 use yii\bootstrap4;
 use yii\bootstrap4\ActiveForm;
-use yii\bootstrap\Modal;
+use yii\bootstrap4\Modal;
 
 $this->title = 'SHAMBANI';
  ?>
@@ -155,7 +155,7 @@ $this->title = 'SHAMBANI';
    <div class="col-md-6">
      <div class="row">
        <div class="col-md-6">
-      <strong><b>shambani</strong></b>
+          <strong><b> <h1 class= "justify-right">SHAMBANI</h1></strong></b>
        </div>
        <div class="col-md-3">
         <a href="your link here"> <i class="far fa-heart fa-2x"></i></a>
