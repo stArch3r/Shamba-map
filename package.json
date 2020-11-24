@@ -1,0 +1,27 @@
+{
+  "name": "shamba-map",
+  "version": "1.0.0",
+  "description": "<p align=\"center\">\r     <a href=\"https://github.com/yiisoft\" target=\"_blank\">\r         <img src=\"https://avatars0.githubusercontent.com/u/993323\" height=\"100px\">\r     </a>\r     <h1 align=\"center\">Yii 2 Advanced Project Template</h1>\r     <br>\r </p>",
+  "main": "index.js",
+  "dependencies": {
+    "express": "^4.17.1",
+    "socket.io": "^3.0.3"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.6"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+	"serve": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stArch3r/Shamba-map.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/stArch3r/Shamba-map/issues"
+  },
+  "homepage": "https://github.com/stArch3r/Shamba-map#readme"
+}
